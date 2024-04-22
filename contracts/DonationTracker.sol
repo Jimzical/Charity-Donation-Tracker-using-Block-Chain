@@ -75,4 +75,9 @@ contract DonationTracker {
     function checkSpentAmount(address sender) public view returns (uint256) {
         return spentAmounts[sender];
     }
+
+    // create a function to return all the donation data
+    function getDonations() public view returns (Donation[] memory) {
+        return donations;
+    }
 }

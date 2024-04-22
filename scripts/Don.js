@@ -6,9 +6,9 @@ module.exports = async function (callback) {
     // Retrieve the deployed contract instance
     const instance = await DonationTracker.deployed();
 
-    const sender = "0x176BC1FCd30140a158D8E50b64f3dCd6183cef3D";
+    const sender = "0xfa37a056574C46b21922bf70E5dC5D0cA26CD7Ae";
 
-    const RECEIVER = "0xEe2157a86F3DA0cA7d2fBBCFC629101e43158a55"; 
+    const RECEIVER = "0x99A5Bc41A7E31DBC4fa58479782ADF70cFd59822"; 
 
     const AMOUNT = "1";
 

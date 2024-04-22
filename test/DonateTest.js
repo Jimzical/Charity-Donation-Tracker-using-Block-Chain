@@ -1,4 +1,7 @@
-// scripts/Donate.js
+// This script is used to make a donation to the DonationTracker contract
+// CMD
+// truffle exec test/DonateTest.js
+
 const DonationTracker = artifacts.require("./DonationTracker.sol");
 
 module.exports = async function (callback) {
@@ -6,10 +9,9 @@ module.exports = async function (callback) {
     // Retrieve the deployed contract instance
     const instance = await DonationTracker.deployed();
 
+    // USER SET DATA  
     const sender = "0xfa37a056574C46b21922bf70E5dC5D0cA26CD7Ae";
-
     const RECEIVER = "0x99A5Bc41A7E31DBC4fa58479782ADF70cFd59822"; 
-
     const AMOUNT = "1";
 
     // Define the donation amount in wei (1 ether = 10^18 wei)

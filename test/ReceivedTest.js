@@ -1,4 +1,6 @@
-// scripts/CheckReceivedAmount.js
+// CMD
+// truffle exec test/ReceivedTest.js
+
 const DonationTracker = artifacts.require("./DonationTracker.sol");
 
 module.exports = async function (callback) {
@@ -7,7 +9,7 @@ module.exports = async function (callback) {
     const instance = await DonationTracker.deployed();
     console.log('Deployed contract instance address:', instance.address);
 
-    // Address whose received amount we want to check
+    // USER SET DATA
     const RECEIVER_ADDRESS = "0xEe2157a86F3DA0cA7d2fBBCFC629101e43158a55"; // Replace with a valid Ethereum address
     
     // Get the received amount for the specified address

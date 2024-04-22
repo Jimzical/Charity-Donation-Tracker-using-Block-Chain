@@ -1,4 +1,6 @@
-// scripts/DisplayDonations.js
+//CMD
+// truffle exec test/getDonationTest.js
+
 const DonationTracker = artifacts.require("./DonationTracker.sol");
 
 module.exports = async function (callback) {

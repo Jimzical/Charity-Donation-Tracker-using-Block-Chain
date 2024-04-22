@@ -33,11 +33,12 @@
         <h1 class="mt-5">Check Spent</h1>
         <form id="checkSpentForm" class="mt-4">
             <div class="form-group">
-                <label for="donationId">Donation ID</label>
-                <input type="text" class="form-control" id="donationId" placeholder="Enter donation ID">
+                <label for="donationAddr">Donation Address</label>
+                <input type="text" class="form-control" id="donationAddr" placeholder="Enter Donation Address">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        <div id="spentAmount" class="mt-4"></div>
     </div>
 
     <!-- Add Bootstrap JS and its dependencies -->
@@ -54,10 +55,16 @@
             event.preventDefault();
 
             // Get the value from the input box
-            const donationId = document.getElementById('donationId').value;
+            const donationAddr = document.getElementById('donationAddr').value;
 
             // Log the value to the console
-            console.log('Donation ID:', donationId);
+            console.log('Donation Address:', donationAddr);
+
+            // Define the spent amount (this would normally come from your server)
+            const amount = '2 ETH';
+
+            // Display the spent amount
+            document.getElementById('spentAmount').innerHTML = `<p>You have spent: ${amount}</p>`;
         });
     </script>
 </body>

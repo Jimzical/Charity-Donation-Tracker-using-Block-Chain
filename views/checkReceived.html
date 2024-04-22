@@ -33,11 +33,12 @@
         <h1 class="mt-5">Check Received</h1>
         <form id="checkReceivedForm" class="mt-4">
             <div class="form-group">
-                <label for="donationId">Donation ID</label>
-                <input type="text" class="form-control" id="donationId" placeholder="Enter donation ID">
+                <label for="donationAddr">Donation Address</label>
+                <input type="text" class="form-control" id="donationAddr" placeholder="Enter Donation Address">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        <div id="receivedAmount" class="mt-4"></div>
     </div>
 
     <!-- Add Bootstrap JS and its dependencies -->
@@ -54,10 +55,14 @@
             event.preventDefault();
 
             // Get the value from the input box
-            const donationId = document.getElementById('donationId').value;
+            const donationAddr = document.getElementById('donationAddr').value;
 
             // Log the value to the console
-            console.log('Donation ID:', donationId);
+            console.log('Donation Address:', donationAddr);
+
+            const receivedAmountElement = document.createElement('div');
+            receivedAmountElement.textContent = 'Received Amount: 2.00 ETH';
+            document.getElementById('receivedAmount').appendChild(receivedAmountElement);
         });
     </script>
 </body>

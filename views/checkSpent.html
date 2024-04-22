@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Spent</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Add a Bootstrap navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Donation Page</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/donate">Donate</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/checkSpent">Check Spent</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/checkReceived">Check Received</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/getDonations">Get Donations</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="mt-5">Check Spent</h1>
+        <form id="checkSpentForm" class="mt-4">
+            <div class="form-group">
+                <label for="donationId">Donation ID</label>
+                <input type="text" class="form-control" id="donationId" placeholder="Enter donation ID">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Add Bootstrap JS and its dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Get the form element
+        const form = document.getElementById('checkSpentForm');
+
+        // Add an event listener for the submit event
+        form.addEventListener('submit', function(event) {
+            // Prevent the form from actually submitting
+            event.preventDefault();
+
+            // Get the value from the input box
+            const donationId = document.getElementById('donationId').value;
+
+            // Log the value to the console
+            console.log('Donation ID:', donationId);
+        });
+    </script>
+</body>
+</html>

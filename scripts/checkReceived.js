@@ -226,7 +226,7 @@ window.ethereum.request({ method: 'eth_requestAccounts' })
         const contract = new web3.eth.Contract(contractABI, contractAddress);
 
         // Get the form element
-        const form = document.getElementById('donationForm');
+        const form = document.getElementById('checkReceivedForm');
 
         // Add an event listener for the submit event
         form.addEventListener('submit', async function (event) {
@@ -237,24 +237,49 @@ window.ethereum.request({ method: 'eth_requestAccounts' })
             const receiver = document.getElementById('donationAddr').value;
 
             console.log('receiver:', receiver);
+            try {
+                // Fetch the received amount
+                const receivedAmount = await contract.methods.checkReceivedAmount(receiver).call();
 
-            console.log('Connected:', accounts);
+                // Create a new Bootstrap card
+                const card = document.createElement('div');
+                card.className = 'card';
 
-            // Define the donation amount in wei (1 ether = 10^18 wei)
-            const donationAmount = web3.utils.toWei(amount, "ether");
+                const cardBody = document.createElement('div');
+                cardBody.className = 'card-body';
 
-        try {
-            // Get the received amount
-            const receivedAmount = await contract.methods.checkReceivedAmount(receiver).call();
+                const cardTitle = document.createElement('h5');
+                cardTitle.className = 'card-title';
+                cardTitle.textContent = `Receiver: ${receiver}`;
 
-            console.log("Received amount fetched successfully!");
-            console.log(`Receiver: ${receiver}\nReceived Amount: ${web3.utils.fromWei(receivedAmount, 'ether')} ETH`);
-        } catch (error) {
-            console.error("An error occurred while fetching the received amount:", error);
-        }
+                const cardText = document.createElement('p');
+                cardText.className = 'card-text';
+                cardText.textContent = `Received Amount: ${web3.utils.fromWei(receivedAmount, 'ether')} ETH`;
+
+                // Append the title and text to the card body
+                cardBody.appendChild(cardTitle);
+                cardBody.appendChild(cardText);
+
+                // Append the card body to the card
+                card.appendChild(cardBody);
+
+                // Append the card to the 'receivedAmount' div
+                document.getElementById('receivedAmount').appendChild(card);
+            } catch (error) {
+                console.error("An error occurred while fetching the received amount:", error);
+            }
         });
     })
     .catch(function (error) {
         // User rejected the request
         console.error('An error occurred:', error);
     });
+
+
+
+
+
+
+
+
+

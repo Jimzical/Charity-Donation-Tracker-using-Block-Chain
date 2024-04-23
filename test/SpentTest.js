@@ -9,7 +9,7 @@ module.exports = async function (callback) {
     console.log('Deployed contract instance address:', instance.address);
 
     // USER SET DATA
-    const SENDER_ADDRESS = "0x176BC1FCd30140a158D8E50b64f3dCd6183cef3D"; // Replace with a valid Ethereum address
+    const SENDER_ADDRESS = "0x7Bbc55b227949DF9c100Ed882172C3766cB9f013"; // Replace with a valid Ethereum address
     
     // Get the spent amount for the specified address
     const spentAmount = await instance.checkSpentAmount(SENDER_ADDRESS);

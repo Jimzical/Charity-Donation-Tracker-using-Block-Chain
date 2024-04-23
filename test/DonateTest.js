@@ -10,8 +10,8 @@ module.exports = async function (callback) {
     const instance = await DonationTracker.deployed();
 
     // USER SET DATA  
-    const sender = "0xfa37a056574C46b21922bf70E5dC5D0cA26CD7Ae";
-    const RECEIVER = "0x99A5Bc41A7E31DBC4fa58479782ADF70cFd59822"; 
+    const sender = "0x7Bbc55b227949DF9c100Ed882172C3766cB9f013";
+    const RECEIVER = "0x2b03c9f55C6eB876abA9CE66DB08c0d9dCe53928"; 
     const AMOUNT = "1";
 
     // Define the donation amount in wei (1 ether = 10^18 wei)

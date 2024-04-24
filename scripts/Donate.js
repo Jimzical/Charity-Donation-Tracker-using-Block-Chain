@@ -8,7 +8,7 @@ window.ethereum.request({ method: 'eth_requestAccounts' })
         // `accounts` is an array that contains the addresses of the user's accounts
         // Enable the Ethereum network
         window.ethereum.enable();
-        
+    
         // Get the contract instance
         const contractABI = [
             {
@@ -234,7 +234,8 @@ window.ethereum.request({ method: 'eth_requestAccounts' })
             event.preventDefault();
 
             // Get the values from the input boxes
-            const sender = document.getElementsByClassName('sender')[0].value;
+            // const sender = document.getElementsByClassName('sender')[0].value;
+            const sender = accounts[0];
             const receiver = document.getElementById('receiver').value;
             const amount = document.getElementById('amount').value;
 
@@ -253,8 +254,16 @@ window.ethereum.request({ method: 'eth_requestAccounts' })
 
                 console.log("Donation sent successfully!");
                 console.log(`Sender: ${sender}\nReceiver: ${receiver}\nAmount: ${amount} ETH`);
+                // to id donationSuccess add a success message
+                let donationSuccessElement = document.getElementById('donationSuccess');
+                donationSuccessElement.classList.add('alert', 'alert-success', 'mt-3');
+                donationSuccessElement.innerHTML = `Donation of ${amount} ETH sent successfully!`;            
             } catch (error) {
                 console.error("An error occurred while making the donation:", error);
+                // to id donationError add an error message
+                let donationSuccessElement = document.getElementById('donationSuccess');
+                donationSuccessElement.classList.add('alert', 'alert-warning', 'mt-3');
+                document.getElementById('donationError').innerHTML = `An error occurred while making the donation: ${error}`;
             }
         });
     })

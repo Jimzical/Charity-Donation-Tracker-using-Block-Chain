@@ -10,11 +10,10 @@ module.exports = async function (callback) {
     console.log('Deployed contract instance address:', instance.address);
 
     // USER SET DATA
-    const RECEIVER_ADDRESS = "0x2b03c9f55C6eB876abA9CE66DB08c0d9dCe53928"; // Replace with a valid Ethereum address
+    const RECEIVER_ADDRESS = "0x2b03c9f55C6eB876abA9CE66DB08c0d9dCe53928"; 
     
     // Get the received amount for the specified address
     const receivedAmount = await instance.checkReceivedAmount(RECEIVER_ADDRESS);
-    console.log('Received amount:', receivedAmount.toString(), 'wei; ', web3.utils.fromWei(receivedAmount.toString(), 'ether'), 'ETH');
 
     // Convert the amount from wei to ether and log it
     const receivedInEther = web3.utils.fromWei(receivedAmount.toString(), "ether");

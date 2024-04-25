@@ -11,11 +11,11 @@ module.exports = async function (callback) {
 
     // USER SET DATA  
     const sender = "0x7Bbc55b227949DF9c100Ed882172C3766cB9f013";
-    const RECEIVER = "0x2b03c9f55C6eB876abA9CE66DB08c0d9dCe53928"; 
+    const RECEIVER = "0x937a8628cAc1d6Bf6Ac6B39c19db5677b00deF1A"; 
     const AMOUNT = "1";
 
     // Define the donation amount in wei (1 ether = 10^18 wei)
-    const DONATION_AMOUNT = web3.utils.toWei(`${AMOUNT}`, "ether"); // Donate 0.5 Ether
+    const DONATION_AMOUNT = web3.utils.toWei(`${AMOUNT}`, "ether"); 
     // Send the donation
     await instance.Donate(RECEIVER, { from: sender, value: DONATION_AMOUNT });
 

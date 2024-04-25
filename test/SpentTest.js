@@ -9,11 +9,11 @@ module.exports = async function (callback) {
     console.log('Deployed contract instance address:', instance.address);
 
     // USER SET DATA
-    const SENDER_ADDRESS = "0x7Bbc55b227949DF9c100Ed882172C3766cB9f013"; // Replace with a valid Ethereum address
+    const SENDER_ADDRESS = "0x7Bbc55b227949DF9c100Ed882172C3766cB9f013"; 
+    
     
     // Get the spent amount for the specified address
     const spentAmount = await instance.checkSpentAmount(SENDER_ADDRESS);
-    console.log('Spent amount:', spentAmount.toString(), 'wei; ', web3.utils.fromWei(spentAmount.toString(), 'ether'), 'ETH');
 
     // Convert the amount from wei to ether and log it
     const spentInEther = web3.utils.fromWei(spentAmount.toString(), "ether");

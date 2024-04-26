@@ -269,7 +269,7 @@ window.ethereum.request({ method: 'eth_requestAccounts' })
                 "constant": true
             }
         ];
-        const contractAddress = "0x023CF05157Af73B56019330D88127d41D8799729";
+        const contractAddress = "0x81f31DAaDF2447321602faEfab40168dc6b5b56C";
         const contract = new web3.eth.Contract(contractABI, contractAddress);
 
         // Get the button element
